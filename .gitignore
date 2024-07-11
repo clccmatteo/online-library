@@ -1,2 +1,2 @@
-# Ignora i file .DS_Store generati da MacOS
+node_modules
 .DS_Store
