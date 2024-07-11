@@ -1,0 +1,80 @@
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #f7f7f7;
+  color: #333;
+}
+
+/* HOMEPAGE */
+
+/* HEADER */
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background: #e7f5ff;
+  border-bottom: 1px solid #a5d8ff;
+}
+
+header div {
+  display: flex;
+  gap: 1.2rem;
+}
+
+header div button {
+  background-color: #a5d8ff;
+  padding: 0.4rem 0.8rem;
+  border: none;
+  border-radius: 2px;
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+
+header div button:hover {
+  background-color: #d0ebff;
+  outline: 1px solid #a5d8ff;
+}
+
+/* BOOK TABLE */
+
+.book-table-container {
+  margin: 0 0.4rem;
+}
+
+.book-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 2rem;
+}
+
+.book-table thead tr {
+  background-color: #d0ebff;
+}
+
+.book-table th,
+.book-table td {
+  padding: 0.8rem;
+}
+
+.book-table th {
+  border: 1px solid #bbb;
+}
+
+.book-table td {
+  border: 1px solid #ddd;
+  padding: 0.8rem;
+}
+
+.book-table tbody tr:nth-child(even) {
+  background-color: #e7f5ff;
+}
