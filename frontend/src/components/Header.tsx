@@ -1,7 +1,7 @@
 export default function Header() {
   return (
     <header>
-      <h1>Libreria Online</h1>
+      <h1>Biblioteca Online</h1>
       <div>
         <button>Login</button>
         <button>Registrati</button>
