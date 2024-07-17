@@ -1,0 +1,85 @@
+/* BOOK TABLE */
+
+.book-table-container {
+  margin: 2rem 3.6rem 0 3.6rem;
+  background-color: #fff5;
+  backdrop-filter: blur(7px);
+  box-shadow: 0 0.4rem 0.8rem #0005;
+  border-radius: 8px;
+}
+
+/* Filter */
+
+.table-header {
+  width: 100%;
+  height: 6.4rem;
+  background-color: #fff4;
+  padding: 1.8rem 2.4rem;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.filter-input {
+  width: 100%;
+  padding: 0 1.2rem 0 1rem;
+  font-size: 1.8rem;
+  background-color: transparent;
+  border: none;
+  outline: none;
+}
+
+/* Content */
+
+.table-body {
+  background-color: #fffb;
+  width: 95%;
+  margin: 0.8rem auto;
+  border-radius: 6px;
+  font-size: 1.4rem;
+}
+
+.book-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.book-table tbody {
+  cursor: pointer;
+}
+
+.book-table-row th,
+.book-table-row td {
+  text-align: left;
+}
+
+.book-table th {
+  padding: 1.8rem;
+  font-size: 1.6rem;
+  font-weight: 700;
+  background-color: #a5d8ff;
+  position: sticky;
+  top: 9.6rem;
+  left: 0;
+}
+
+.book-table tr:hover {
+  background-color: #fff !important;
+}
+
+.book-table td {
+  padding: 1.6rem;
+}
+
+.book-table tbody tr:nth-child(even) {
+  background-color: #00000005;
+}
+
+.status {
+  color: #f03e3e;
+}
+
+.status.avaible {
+  color: #37b24d;
+}
