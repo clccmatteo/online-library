@@ -22,5 +22,14 @@ namespace backend.Controllers
             var books = _context.Books.ToList();
             return Ok(books);
         }
+
+        [HttpGet("{isbn}")]
+        public IActionResult GetBookFromISBN ([FromRoute] string isbn){
+            var book = _context.Books.Find(isbn);
+            if(book == null){
+                return NotFound();
+            }
+            return Ok(book);
+        }
     }
 }

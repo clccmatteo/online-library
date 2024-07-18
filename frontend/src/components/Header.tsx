@@ -3,7 +3,7 @@ export default function Header() {
     <header className="header">
       <h1 className="logo">Biblioteca Corso Europa</h1>
       <div className="main-nav-list">
-        <a className="main-nav-link" href="#">
+        <a className="main-nav-link" href="/">
           Home Page
         </a>
         <a href="" className="main-nav-link nav-cta">

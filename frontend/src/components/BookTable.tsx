@@ -1,4 +1,5 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 interface Book {
   isbn: string;
@@ -7,18 +8,15 @@ interface Book {
   genre: string;
 }
 
-const BookTable = () => {
+export default function BookTable() {
   const [books, setBooks] = useState<Book[]>([]);
   const [filter, setFilter] = useState("");
+  const navigate = useNavigate();
 
   useEffect(() => {
     fetch("http://localhost:5258/api/books")
-      .then((res) => {
-        return res.json();
-      })
-      .then((data) => {
-        setBooks(data);
-      });
+      .then((res) => res.json())
+      .then((data) => setBooks(data));
   }, []);
 
   const handleFilterChange = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -31,12 +29,16 @@ const BookTable = () => {
       book.author.toLowerCase().includes(filter.toLowerCase())
   );
 
+  const handleRowClick = (isbn: string): void => {
+    navigate(`/bookdetails/${isbn}`);
+  };
+
   return (
     <div className="book-table-container">
       <div className="table-header">
         <input
           type="text"
-          placeholder="Cerca per titolo, autore"
+          placeholder="Cerca per titolo o autore"
           value={filter}
           onChange={handleFilterChange}
           className="filter-input"
@@ -47,22 +49,26 @@ const BookTable = () => {
         <table className="book-table">
           <thead>
             <tr className="book-table-row">
-              <th className="w-3/20">ISBN</th>
-              <th className="w-3/10">Title</th>
-              <th className="w-1/4">Autore</th>
-              <th className="w-1/4">Genere</th>
-              <th className="w-1/20">Disponibile</th>
+              <th>ISBN</th>
+              <th>Titolo</th>
+              <th>Autore</th>
+              <th>Genere</th>
+              <th>Disponibile</th>
             </tr>
           </thead>
           <tbody>
             {filteredBooks &&
               filteredBooks.map((book) => (
-                <tr className="book-table-row" key={book.isbn}>
+                <tr
+                  className="book-table-row"
+                  key={book.isbn}
+                  onClick={() => handleRowClick(book.isbn)}
+                >
                   <td>{book.isbn}</td>
                   <td>{book.title}</td>
                   <td>{book.author}</td>
                   <td>{book.genre}</td>
-                  <td className="status avaible">Si</td>
+                  <td className="status available">Si</td>
                 </tr>
               ))}
           </tbody>
@@ -70,6 +76,4 @@ const BookTable = () => {
       </div>
     </div>
   );
-};
-
-export default BookTable;
+}
