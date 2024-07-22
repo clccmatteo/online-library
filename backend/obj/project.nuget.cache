@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "cosldTb/P6E=",
+  "dgSpecHash": "FaJHdiokC+Y=",
   "success": true,
   "projectFilePath": "/Users/matteocolucci/Documents/GitHub/online-library/backend/backend.csproj",
   "expectedPackageFiles": [
+    "/Users/matteocolucci/.nuget/packages/bcrypt.net-next/4.0.3/bcrypt.net-next.4.0.3.nupkg.sha512",
     "/Users/matteocolucci/.nuget/packages/humanizer.core/2.14.1/humanizer.core.2.14.1.nupkg.sha512",
     "/Users/matteocolucci/.nuget/packages/microsoft.aspnetcore.cors/2.2.0/microsoft.aspnetcore.cors.2.2.0.nupkg.sha512",
     "/Users/matteocolucci/.nuget/packages/microsoft.aspnetcore.http.abstractions/2.2.0/microsoft.aspnetcore.http.abstractions.2.2.0.nupkg.sha512",

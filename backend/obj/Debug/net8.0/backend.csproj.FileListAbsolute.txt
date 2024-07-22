@@ -104,3 +104,4 @@
 /Users/matteocolucci/Documents/GitHub/online-library/backend/bin/Debug/net8.0/MySqlConnector.dll
 /Users/matteocolucci/Documents/GitHub/online-library/backend/bin/Debug/net8.0/Pomelo.EntityFrameworkCore.MySql.dll
 /Users/matteocolucci/Documents/GitHub/online-library/backend/obj/Debug/net8.0/backend.sourcelink.json
+/Users/matteocolucci/Documents/GitHub/online-library/backend/bin/Debug/net8.0/BCrypt.Net-Next.dll

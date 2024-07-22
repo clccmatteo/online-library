@@ -1,0 +1,86 @@
+body {
+  height: 100vh;
+}
+
+.book-container {
+  box-shadow: 0 2.4rem 4.8rem rgba(0, 0, 0, 0.075);
+
+  border-radius: 11px;
+  background-color: #fff5;
+  backdrop-filter: blur(7px);
+
+  width: 54.6rem;
+  margin: 4.8rem auto;
+}
+
+.details-container {
+  padding: 3.2rem 4.8rem 4.8rem 4.8rem;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  gap: 0.4rem;
+  font-size: 3.6rem;
+}
+
+.genre {
+  margin: 1.2rem auto 0;
+  display: inline-block;
+  padding: 0.4rem 0.8rem;
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  color: #333;
+  border-radius: 100px;
+  font-weight: 600;
+  background-color: #a5d8ff;
+}
+
+.title {
+  margin: 0 auto 1.2rem;
+  text-transform: uppercase;
+  font-size: 2.4rem;
+  color: #333;
+  font-weight: 600;
+}
+
+.author {
+  font-size: 1.6rem;
+  margin: auto;
+}
+
+.isbn {
+  position: absolute;
+  bottom: 0.8rem;
+  left: 0.8rem;
+  font-weight: 400;
+  font-size: 1rem;
+  display: inline-block;
+}
+
+.btn-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.btn {
+  padding: 1.2rem;
+  font-size: 1.8rem;
+  width: 100%;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  background: #fffb;
+}
+
+.btn--edit {
+  color: #1971c2;
+}
+
+.btn--delete {
+  color: #f03e3e;
+}
+
+.btn:hover {
+  background: #fff7;
+}

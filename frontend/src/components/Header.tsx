@@ -7,7 +7,7 @@ export default function Header() {
           Home Page
         </a>
         <a href="" className="main-nav-link nav-cta">
-          Account
+          Utenti
         </a>
       </div>
     </header>
