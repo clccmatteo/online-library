@@ -1,10 +1,5 @@
-body {
-  height: 100vh;
-}
-
 .book-container {
   box-shadow: 0 2.4rem 4.8rem rgba(0, 0, 0, 0.075);
-
   border-radius: 11px;
   background-color: #fff5;
   backdrop-filter: blur(7px);
