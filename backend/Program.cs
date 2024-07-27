@@ -1,4 +1,6 @@
 using backend.Data;
+using backend.Models;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -8,11 +10,14 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+builder.Services.AddAuthorization();
 
 builder.Services.AddDbContext<LibraryDBContext>(options =>
     options.UseMySql(builder.Configuration.GetConnectionString("LibraryDb"),
     new MySqlServerVersion(new Version(8, 0, 23)),
     mySqlOptions => mySqlOptions.EnableRetryOnFailure()));
+
+builder.Services.AddIdentityApiEndpoints<IdentityUser>().AddEntityFrameworkStores<LibraryDBContext>();
 
 // Configurazione CORS
 builder.Services.AddCors(options =>
@@ -38,5 +43,7 @@ app.UseHttpsRedirection();
 app.UseCors("CorsPolicy");
 
 app.MapControllers();
+
+app.MapGroup("/identity").MapIdentityApi<IdentityUser>();
 
 app.Run();

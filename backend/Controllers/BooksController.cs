@@ -3,6 +3,9 @@ using System.Linq;
 using Microsoft.AspNetCore.Mvc;
 using backend.Models;
 using backend.Data;
+using backend.dtos.books;
+using Microsoft.AspNetCore.Http.HttpResults;
+
 
 namespace backend.Controllers
 {
@@ -30,6 +33,39 @@ namespace backend.Controllers
                 return NotFound();
             }
             return Ok(book);
+        }
+
+        [HttpPut("{isbn}")]
+        public IActionResult EditBookFromISBN([FromRoute] string isbn, [FromBody] UpdateBookRequestDTO updateDTO){
+            var bookModel = _context.Books.FirstOrDefault(b => b.Isbn == isbn);
+
+            if(bookModel == null){
+                return NotFound();
+            }
+
+            bookModel.Genre = updateDTO.Genre;
+            bookModel.Title = updateDTO.Title;
+            bookModel.Author = updateDTO.Author;
+
+            _context.SaveChanges();
+
+            return Ok(bookModel);
+        }
+
+        [HttpDelete("{isbn}")]
+        public IActionResult RemoveBookFromISBN([FromRoute] string isbn){
+            var bookModel = _context.Books.FirstOrDefault(b => b.Isbn == isbn);
+
+            if(bookModel == null){
+                return NotFound();
+            }
+
+            _context.Books.Remove(bookModel);
+
+            _context.SaveChanges();
+
+            return NoContent();
+            
         }
     }
 }
