@@ -1,4 +1,5 @@
 import React from "react";
+import "./ConfirmDialog.css";
 
 interface ConfirmDialogProps {
   message: string;
@@ -6,11 +7,11 @@ interface ConfirmDialogProps {
   onCancel: () => void;
 }
 
-const ConfirmDialog: React.FC<ConfirmDialogProps> = ({
+export default function ConfirmDialog({
   message,
   onConfirm,
   onCancel,
-}) => {
+}: ConfirmDialogProps) {
   return (
     <div className="confirm-dialog">
       <div className="confirm-dialog-content">
@@ -26,6 +27,4 @@ const ConfirmDialog: React.FC<ConfirmDialogProps> = ({
       </div>
     </div>
   );
-};
-
-export default ConfirmDialog;
+}

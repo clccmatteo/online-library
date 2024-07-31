@@ -1,0 +1,36 @@
+.confirm-dialog {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.confirm-dialog-content {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  text-align: center;
+}
+
+.confirm-dialog-buttons {
+  margin-top: 10px;
+  display: flex;
+}
+
+.confirm-dialog-buttons .btn {
+  border: 1px solid #1971c2;
+  margin: 0 5px;
+}
+
+.btn--confirm:hover {
+  background-color: #ffc9c9;
+}
+
+.btn--cancel:hover {
+  background-color: #a5d8ff;
+}

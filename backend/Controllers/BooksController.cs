@@ -5,6 +5,7 @@ using backend.Models;
 using backend.Data;
 using backend.dtos.books;
 using Microsoft.AspNetCore.Http.HttpResults;
+using backend.Mappers;
 
 
 namespace backend.Controllers
@@ -66,6 +67,15 @@ namespace backend.Controllers
 
             return NoContent();
             
+        }
+
+        [HttpPost]
+        public IActionResult CreateBook([FromBody] CreateBookRequestDTO bookDto)
+        {
+            var bookModel = bookDto.ToBookFromCreateDTO();
+            _context.Books.Add(bookModel);
+            _context.SaveChanges();
+            return CreatedAtAction(nameof(GetBookFromISBN), new{isbn = bookModel}, bookModel.ToBookDto());
         }
     }
 }

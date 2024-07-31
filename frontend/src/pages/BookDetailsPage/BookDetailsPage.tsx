@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import Header from "../../components/Header";
-import ConfirmDialog from "../../components/ConfirmDialog";
+import ConfirmDialog from "../../components/ConfirmDialog/ConfirmDialog";
 import "./BookDetailsPage.css";
+import AddForm from "../../components/AddForm/AddForm";
 
 interface Book {
   title: string;
@@ -14,6 +15,7 @@ interface Book {
 export default function BookDetails() {
   const [book, setBookDetails] = useState<Book | null>(null);
   const [isEditing, setIsEditing] = useState(false);
+  const [showFormDialog, setShowFormDialog] = useState(false);
   const [showConfirmDialog, setShowConfirmDialog] = useState(false);
   const { isbn } = useParams<{ isbn: string }>();
   const navigate = useNavigate();
@@ -67,9 +69,13 @@ export default function BookDetails() {
     setShowConfirmDialog(false);
   }
 
+  function handleCtaClick() {
+    setShowFormDialog(true);
+  }
+
   return (
     <>
-      <Header />
+      <Header cta="Nuovo libro" ctaOnClick={handleCtaClick} />
       {book && (
         <div className="book-container">
           <div className="details-container edit-container">
@@ -135,6 +141,14 @@ export default function BookDetails() {
             />
           )}
         </div>
+      )}
+      {showFormDialog && (
+        <AddForm
+          type="book"
+          fields={["isbn", "name", "author", "genre"]}
+          onSubmit={() => {}}
+          onClose={() => {}}
+        />
       )}
     </>
   );

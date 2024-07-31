@@ -114,15 +114,16 @@ body {
   color: #339af0;
 }
 
-.main-nav-link.nav-cta:link,
-.main-nav-link.nav-cta:visited {
+.main-nav-link.nav-cta {
   padding: 1.2rem 2.4rem;
   border-radius: 9px;
+  font-size: 1.8rem;
   color: #333;
   background-color: #a5d8ff;
+  border: none;
+  cursor: pointer;
 }
 
-.main-nav-link.nav-cta:hover,
-.main-nav-link.nav-cta:active {
+.main-nav-link.nav-cta:hover {
   background-color: #74c0fc;
 }

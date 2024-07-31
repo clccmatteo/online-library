@@ -1,4 +1,9 @@
-export default function Header() {
+interface HeaderProps {
+  cta: string;
+  ctaOnClick: () => void;
+}
+
+export default function Header({ cta, ctaOnClick }: HeaderProps) {
   return (
     <header className="header">
       <h1 className="logo">Biblioteca Corso Europa</h1>
@@ -6,9 +11,12 @@ export default function Header() {
         <a className="main-nav-link" href="/">
           Home Page
         </a>
-        <a href="" className="main-nav-link nav-cta">
+        <a className="main-nav-link" href="/">
           Utenti
         </a>
+        <button onClick={ctaOnClick} className="main-nav-link nav-cta">
+          {cta}
+        </button>
       </div>
     </header>
   );
